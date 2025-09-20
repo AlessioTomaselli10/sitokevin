@@ -1,0 +1,28 @@
+---
+const year = new Date().getFullYear()
+import linkedinIconUrl from "../assets/icons/link.svg?url";
+
+---
+<footer class="mt-20 border-t-4 border-blue-900 w-full py-2 text-center font-sans text-sm">
+  <div class="mx-auto max-w-[1100px] px-4">
+    <!-- Social -->
+    <div class="mb-3 flex justify-center">
+      <a href="https://www.linkedin.com/in/kevinfazzelli/" target="_blank" rel="noopener" class="mx-2 inline-block transition-transform hover:scale-110">
+        <img src={linkedinIconUrl} alt="LinkedIn" loading="lazy" class="w-[24px] h-[24px]" />
+      </a>
+    </div>
+
+    <!-- Link -->
+    <nav class="flex flex-wrap items-center justify-center gap-3 text-sm">
+      <a href="/privacy.html" target="_blank" class="text-blue-900 hover:underline">Privacy Policy</a>
+      <a href="/cookie.html"  target="_blank" class="text-blue-900 hover:underline">Cookie Policy</a>
+      <a href="mailto:kevinfcopywriting@gmail.com" class="text-blue-900 hover:underline">kevinfcopywriting@gmail.com</a>
+      <span class="text-blue-900">Palermo</span>
+    </nav>
+
+    <!-- Copyright -->
+    <p class="mt-2 text-blue-900">
+      Kevin Fazzelli © {year}. All Rights Reserved.
+    </p>
+  </div>
+</footer>

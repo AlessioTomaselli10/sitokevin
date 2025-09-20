@@ -1,0 +1,26 @@
+---
+import "../styles/global.css"; // importa Tailwind + fonts
+const { title = "sitokevin", description = "Website" } = Astro.props;
+---
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Preload SOLO i font critici -->
+    <link rel="preload" as="font" href="/fonts/montserrat-v29-latin-700.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="/fonts/raleway-v34-latin-regular.woff2" type="font/woff2" crossorigin>
+  </head>
+
+  <!-- Sticky footer: il main si espande e spinge giù il footer -->
+  <body class="min-h-screen flex flex-col bg-background text-blue-900 font-sans">
+    <slot name="header" />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <slot name="footer" />
+  </body>
+</html>

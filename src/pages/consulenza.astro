@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Seo from "../components/Seo.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout>
+  <Seo
+    slot="seo"
+    title="Metti Il Boost Al Tuo Business"
+    description="Consulenza e copywriting per far crescere il tuo business con un sistema di acquisizione clienti efficiente."
+    canonical="https://fazzellikevin.it/consulenza/"
+    author="Kevin Fazzelli"
+  />
+
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-display font-bold mb-4">Consulenza</h1>
+    <p class="text-lg font-alt">
+      Qui metti i contenuti della pagina consulenza.
+    </p>
+  </main>
+
+  <Footer slot="footer" />
+</BaseLayout>

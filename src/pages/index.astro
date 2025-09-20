@@ -1,12 +1,29 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Seo from "../components/Seo.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<BaseLayout title="Home | sitokevin">
-  <h1 class="text-3xl font-display font-bold">Benvenuto su sitokevin</h1>
+<BaseLayout>
+  <Fragment slot="seo">
+    <Seo
+      title="Home | sitokevin"
+      description="Scopri come creare un sistema efficace di acquisizione clienti nel 2025 con copywriting strategico."
+      canonical="https://fazzellikevin.it/"
+      author="Kevin Fazzelli"
+    />
+  </Fragment>
 
-  <!-- Contenuti pagina... -->
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-display font-bold mb-6">
+      Benvenuto su sitokevin
+    </h1>
+
+    <!-- Qui andrà il contenuto della home -->
+    <p class="text-lg font-alt text-gray-900">
+      Questa è la tua nuova homepage in Astro + Tailwind.
+    </p>
+  </main>
 
   <Footer slot="footer" />
 </BaseLayout>

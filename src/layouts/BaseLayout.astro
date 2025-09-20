@@ -1,5 +1,7 @@
 ---
-import "../styles/global.css"; // importa Tailwind + fonts
+// src/layouts/BaseLayout.astro
+import "../styles/global.css"; // Tailwind + fonts
+
 const { title = "sitokevin", description = "Website" } = Astro.props;
 ---
 <!doctype html>
@@ -7,12 +9,17 @@ const { title = "sitokevin", description = "Website" } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content={description} />
-    <title>{title}</title>
+
+
+    <!-- SEO per-pagina -->
+    <slot name="seo" />
 
     <!-- Preload SOLO i font critici -->
     <link rel="preload" as="font" href="/fonts/montserrat-v29-latin-700.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/raleway-v34-latin-regular.woff2" type="font/woff2" crossorigin>
+
+    <!-- Script/markup extra da inserire in HEAD (iubenda autoblocking, ecc.) -->
+    <slot name="head-extra" />
   </head>
 
   <!-- Sticky footer: il main si espande e spinge giù il footer -->
@@ -22,5 +29,8 @@ const { title = "sitokevin", description = "Website" } = Astro.props;
       <slot />
     </main>
     <slot name="footer" />
+
+    <!-- Script a fine body (es. GTM noscript) -->
+    <slot name="body-end" />
   </body>
 </html>

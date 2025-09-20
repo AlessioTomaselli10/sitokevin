@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Seo from "../components/Seo.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout>
+  <Seo
+    slot="seo"
+    title="I 3 Errori Invisibili - Guida Gratuita"
+    description="Scopri i 3 errori invisibili che bloccano il 90% dei funnel italiani. Scarica la guida gratuita e correggi il tuo marketing."
+    canonical="https://fazzellikevin.it/squeezepage/"
+    author="Kevin Fazzelli"
+  />
+
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-display font-bold mb-4">Scarica la guida gratuita</h1>
+    <p class="text-lg font-alt">
+      Qui metti i contenuti della tua squeeze page.
+    </p>
+  </main>
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,12 +1,13 @@
 ---
+// src/components/Seo.astro
 const {
   title = "fazzellikevin.it",
   description = "",
   canonical = "",
-  image = "/og-default.jpg", // metti un file reale in /public
+  image = "/images/og-default.jpg", // assicurati esista in /public/images
   robots = "index, follow",
   author = "Kevin Fazzelli",
-  extra = null,              // per meta extra (es. google-site-verification)
+  extra = null, // per meta extra (es: google-site-verification)
 } = Astro.props;
 ---
 <title>{title}</title>

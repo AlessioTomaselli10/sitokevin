@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Seo from "../components/Seo.astro";
 import Footer from "../components/Footer.astro";
+import Header from "../components/header.astro";
 ---
 
 <BaseLayout>
@@ -11,9 +12,8 @@ import Footer from "../components/Footer.astro";
   description="Scopri come creare un sistema efficace di acquisizione clienti nel 2025 con copywriting strategico."
   canonical="https://fazzellikevin.it/"
   author="Kevin Fazzelli"
-  image="https://fazzellikevin.it/images/kevin-fazzelli-copywriter.avif"
 />
-
+  <Header slot="header" />
 
   <main class="container mx-auto px-4 py-8">
     <h1 class="text-3xl font-display font-bold mb-6">

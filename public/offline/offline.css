@@ -1,0 +1,105 @@
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  user-select: none;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #222;
+}
+
+#container {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  background: #fff;
+  border: 2px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+#game-area {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  border-top: 2px solid #ccc;
+  overflow: hidden;
+  background: #e0e0e0;
+}
+
+#pen {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+  width: 50px;
+  transition: bottom 0.3s ease;
+}
+
+.jump {
+  animation: jumpAnim 600ms ease forwards;
+}
+
+@keyframes jumpAnim {
+  0% { bottom: 10px; }
+  50% { bottom: 110px; }
+  100% { bottom: 10px; }
+}
+
+#obstacle, #bonus {
+  position: absolute;
+  bottom: 10px;
+  right: -150px;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 12px;
+  white-space: nowrap;
+  font-size: 14px;
+  user-select: none;
+  cursor: default;
+}
+
+#obstacle {
+  background: #ffdddd;
+  color: #cc0000;
+  border: 2px solid #cc0000;
+  max-width: 160px;
+  padding: auto;
+}
+
+#bonus {
+  background: #ddffdd;
+  color: #007700;
+  border: 2px solid #007700;
+  max-width: 130px;
+}
+
+.hidden {
+  display: none;
+}
+
+#score {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: right;
+  color: #444;
+}
+
+#instructions {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+}

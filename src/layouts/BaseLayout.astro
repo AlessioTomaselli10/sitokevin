@@ -10,17 +10,23 @@ const {
 <!doctype html>
 <html lang="it">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="google-site-verification" content="CKvEM8l6G4hldqCywI3c0jK7Nser7u3s8W-3xe7ZQAI" />
 
-    <!-- SEO per-pagina (meta og/twitter/json-ld aggiuntivi) -->
-    <slot name="seo" />
+  <!-- Favicon globali -->
+  <link rel="icon" href="/images/favicon.ico" sizes="any" />
+  <!-- (opzionale) ico/png/svg aggiuntivi se li hai -->
+  <!-- <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" /> -->
+  <!-- <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" /> -->
+  <!-- <link rel="manifest" href="/site.webmanifest" /> -->
 
-    <!-- Preload SOLO i font critici -->
-    <link rel="preload" as="font" href="/fonts/montserrat-v29-latin-700.woff2" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="/fonts/raleway-v34-latin-regular.woff2" type="font/woff2" crossorigin>
+  <!-- Preload SOLO i font critici -->
+  <link rel="preload" as="font" href="/fonts/montserrat-v29-latin-700.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="/fonts/raleway-v34-latin-regular.woff2" type="font/woff2" crossorigin>
+
+  <!-- Meta/SEO per-pagina (title, description, og, twitter, canonical, json-ld…) -->
+  <slot name="seo" />
 
     <!-- IUBENDA: config + autoblocking + lazy load su interazione -->
     <script type="text/javascript">
@@ -105,7 +111,16 @@ const {
         height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
 
-    <!-- Script a fine body aggiuntivi per-pagina -->
+       <!-- Script a fine body per-pagina -->
     <slot name="body-end" />
+<script is:inline>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js', { scope: '/' });
+    });
+  }
+</script>
+
+
   </body>
 </html>

@@ -2,23 +2,92 @@
 // src/layouts/BaseLayout.astro
 import "../styles/global.css"; // Tailwind + fonts
 
-const { title = "sitokevin", description = "Website" } = Astro.props;
+const {
+  title = "sitokevin",
+  description = "Website",
+} = Astro.props;
 ---
 <!doctype html>
 <html lang="it">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
 
-
-    <!-- SEO per-pagina -->
+    <!-- SEO per-pagina (meta og/twitter/json-ld aggiuntivi) -->
     <slot name="seo" />
 
     <!-- Preload SOLO i font critici -->
     <link rel="preload" as="font" href="/fonts/montserrat-v29-latin-700.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/raleway-v34-latin-regular.woff2" type="font/woff2" crossorigin>
 
-    <!-- Script/markup extra da inserire in HEAD (iubenda autoblocking, ecc.) -->
+    <!-- IUBENDA: config + autoblocking + lazy load su interazione -->
+    <script type="text/javascript">
+      var _iub = _iub || [];
+      _iub.csConfiguration = {
+        "siteId": 4044939,
+        "cookiePolicyId": 37818933,
+        "lang": "it",
+        "storage": { "useSiteId": true }
+      };
+    </script>
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4044939.js" defer></script>
+    <script>
+      function loadIubendaScript() {
+        var s = document.createElement('script');
+        s.src = "//cdn.iubenda.com/cs/iubenda_cs.js";
+        s.charset = "UTF-8";
+        s.defer = true;
+        document.head.appendChild(s);
+        window.removeEventListener("scroll", loadIubendaScript);
+        window.removeEventListener("touchstart", loadIubendaScript);
+        window.removeEventListener("click", loadIubendaScript);
+      }
+      window.addEventListener("scroll", loadIubendaScript);
+      window.addEventListener("touchstart", loadIubendaScript);
+      window.addEventListener("click", loadIubendaScript);
+    </script>
+
+    <!-- GTM: bloccato finché non c'è consenso "marketing" (iubenda) -->
+    <script type="text/plain" class="iubenda-cs-preferences-link" data-type="marketing">
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-K6KK2VZB');
+    </script>
+
+    <!-- JSON-LD GLOBALI -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kevin Fazzelli",
+      "url": "https://fazzellikevin.it/",
+      "image": "https://fazzellikevin.it/images/kevin-fazzelli-copywriter.avif",
+      "jobTitle": "Copywriter & Consulente marketing a risposta diretta",
+      "sameAs": ["https://www.linkedin.com/in/kevinfazzelli/"],
+      "worksFor": { "@type": "Organization", "name": "Kevin Fazzelli" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Palermo", "addressCountry": "IT" },
+      "email": "mailto:kevinfcopywriting@gmail.com",
+      "description": "Copywriter e consulente di marketing a risposta diretta: progetto funnel e contenuti che trasformano traffico in lead e clienti.",
+      "knowsAbout": ["copywriting", "direct response", "funnel di acquisizione", "email marketing", "landing page", "lead generation"],
+      "areaServed": "IT"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Kevin Fazzelli",
+      "url": "https://fazzellikevin.it/",
+      "inLanguage": "it-IT"
+    }
+    </script>
+
+    <!-- Head extra per-pagina (se necessario) -->
     <slot name="head-extra" />
   </head>
 
@@ -30,7 +99,13 @@ const { title = "sitokevin", description = "Website" } = Astro.props;
     </main>
     <slot name="footer" />
 
-    <!-- Script a fine body (es. GTM noscript) -->
+    <!-- GTM noscript: presente su tutte le pagine -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6KK2VZB"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+    <!-- Script a fine body aggiuntivi per-pagina -->
     <slot name="body-end" />
   </body>
 </html>

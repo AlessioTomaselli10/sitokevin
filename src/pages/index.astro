@@ -6,7 +6,7 @@ import Header from "../components/header.astro";
 import Footer from "../components/Footer.astro";
 
 // Importa il CSS specifico per la homepage
-import "../styles/index.css";
+//import "../styles/index.css";
 ---
 
 <BaseLayout>
@@ -17,12 +17,48 @@ import "../styles/index.css";
     canonical="https://fazzellikevin.it/"
     author="Kevin Fazzelli"
   />
-  <Header slot="header" />
+  <!--<Header slot="header" />  -->
 
   <!-- Contenuto specifico della homepage -->
-  <div class="titolo">
-    <h1 id="hero-title" class="fade-slide-up">Caro Imprenditore o Freelance, sei stanco di essere in balia delle <span class="oscillante">oscillazioni</span> del mercato?</h1>
-  </div>
+<div class="w-full bg-gradient-to-b from-blue-900/85 to-blue-900/60 shadow-[0_4px_10px_rgba(0,0,0,0.1)] pt-10 pb-10">
+  <h1 class="font-montserrat font-bold text-center text-white text-[clamp(32px,3.1vw,52px)] mx-auto my-[30px_70px] fade-slide-up px-6 sm:px-8 leading-tight max-w-3xl">
+    Caro Imprenditore o Freelance<br class="hidden lg:block">
+    sei stanco di essere in balia delle <span class="oscillante">oscillazioni</span> del mercato?
+  </h1>
+</div>
+
+<style>
+  @keyframes oscillazione {
+    0% { transform: rotate(0deg); color: inherit; }
+    25% { transform: rotate(-20deg); color: green; }
+    50% { transform: rotate(0deg); color: inherit; }
+    75% { transform: rotate(20deg); color: red; }
+    100% { transform: rotate(0deg); color: inherit; }
+  }
+  .oscillante {
+    display: inline-block;
+    animation: oscillazione 3s ease-in-out;
+    animation-delay: 2s;
+  }
+  /* Aggiungi anche fade-slide-up se necessario */
+</style>
+
+<style>
+  @keyframes oscillazione {
+    0% { transform: rotate(0deg); color: inherit; }
+    25% { transform: rotate(-20deg); color: green; }
+    50% { transform: rotate(0deg); color: inherit; }
+    75% { transform: rotate(20deg); color: red; }
+    100% { transform: rotate(0deg); color: inherit; }
+  }
+  .oscillante {
+    display: inline-block;
+    animation: oscillazione 3s ease-in-out;
+    animation-delay: 2s;
+  }
+</style>
+
+
   <p class="fade fade-delay-1">I costi pubblicitari diventano sempre più insostenibili... e trovare clienti sembra diventato un terno al lotto.</p>
   <p class="fade fade-delay-2">Ma forse c’è ancora <span class="lato">qualcosa</span> che puoi fare...</p>
   <p class="fade fade-delay-3">In questa pagina, voglio svelarti cosa ti sta impedendo di <span class="bluetext">acquisire clienti</span> nel 2025 e come puoi fare per creare il tuo <span class="blu"> sistema di acquisizione</span>.</p>

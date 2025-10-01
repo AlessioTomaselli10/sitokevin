@@ -67,3 +67,43 @@ const visibleLinks = links.filter(link => link.visible !== false);
   overlay?.addEventListener('click', closeMenu);
   closeBtn?.addEventListener('click', closeMenu);
 </script>
+
+-----------
+
+vecchia headline index
+
+css --
+
+.titolo{
+  background: linear-gradient(to bottom, rgba(30, 58, 95, 0.85), rgba(30, 58, 95, 0.6));
+    width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+
+#hero-title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: clamp(30px, 3vw, 50px);
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 70px;
+    color: white;
+}
+
+@keyframes oscillazione {
+    0% { transform: rotate(0deg); color: inherit; }          25% { transform: rotate(-20deg); color: green; }         50% { transform: rotate(0deg); color: inherit; }         75% { transform: rotate(20deg); color: red; }            100% { transform: rotate(0deg); color: inherit; }    }
+
+.oscillante {
+    display: inline-block;     animation: oscillazione 3s ease-in-out;     animation-delay: 2s
+   }
+
+
+css --
+
+html --
+
+ <div class="titolo">
+    <h1 id="hero-title" class="fade-slide-up">Caro Imprenditore o Freelance, sei stanco di essere in balia delle <span class="oscillante">oscillazioni</span> del mercato?</h1>
+  </div>
+
+html --

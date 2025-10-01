@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Seo from "../components/Seo.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/header.astro";
+import "../styles/consulenza.css";
 ---
 
 <BaseLayout>
@@ -15,12 +16,152 @@ import Header from "../components/header.astro";
   />
     <Header slot="header" />
 
-  <main class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-display font-bold mb-4">Consulenza</h1>
-    <p class="text-lg font-alt">
-      Qui metti i contenuti della pagina consulenza.
+   <div class="container-hero">
+    <h1 class="gradient-text">Ecco perché stai perdendo clienti ogni giorno.
+        <br>Senza nemmeno accorgertene.
+    </h1>
+    <p>Scopri i <strong>3 errori invisibili</strong> che bloccano le vendite nel <strong>90% dei funnel italiani</strong>.<br>E che probabilmente bloccano anche il <strong>tuo</strong>.</p>
+            <p>Una <strong>guida gratuita</strong> pensata per <u>imprenditori</u> e <u>freelance</u> che comunicano… MA non convertono.</p>
+    <a href="#form" class="btn">SCARICA LA GUIDA GRATIS</a>
+  </div>
+
+
+<div class="squeeze-hero">
+  <h1 class="squeeze-title">Ecco perché stai perdendo clienti ogni giorno.<br>Senza nemmeno accorgertene.</h1>
+  <p>Scopri i <strong>3 errori invisibili</strong> che bloccano le vendite nel <strong>90% dei funnel italiani</strong>.<br>E che probabilmente bloccano anche il <strong>tuo</strong>.</p>
+  <p>Una <strong>guida gratuita</strong> pensata per <u>imprenditori</u> e <u>freelance</u> che comunicano… MA non convertono.</p>
+  <a href="#form" class="squeeze-btn">SCARICA LA GUIDA GRATIS</a>
+</div>
+
+
+  <section class="first">
+    <div>
+    <h2>La situazione</h2>
+       <ul class="custom-bullet">
+      <li>Hai già un sito</li>
+      <li>Hai fatto contenuti</li>
+      <li>Hai investito in pubblicità o pagato un’agenzia</li>
+    </ul>
+    <p><strong>Ma i clienti non arrivano.</strong></p>
+    </div>
+  </section>
+   
+
+    <section class="gray-section">
+      <div class="center">
+      <h2 class="highlight">Il problema non è il traffico.</h2>
+      <p>👇</p>
+      <p>È cosa dici, come lo dici e a chi lo dici.</p>
+    </div>
+    </section>
+
+   <section id="arrivato-fin-qui">
+  <div class="arrivato-container">
+    <h2 class="arrivato-heading">Dove si trovano i 3 Errori Invisibili</h2>
+
+    <div class="arrivato-card">
+      <div class="arrivato-icon">
+        <img src="images2/centro.svg" alt="Icona 1">
+      </div>
+      <div class="arrivato-text">
+        <h3 class="arrivato-card-title">Nel messaggio</h3>
+      </div>
+    </div>
+
+    <div class="arrivato-card">
+      <div class="arrivato-icon">
+        <img src="images2/puzzle.svg" alt="Icona 2">
+      </div>
+      <div class="arrivato-text">
+        <h3 class="arrivato-card-title">Nell'offerta</h3>
+      </div>
+    </div>
+
+    <div class="arrivato-card">
+      <div class="arrivato-icon">
+        <img src="images2/maps.svg" alt="Icona 3">
+      </div>
+      <div class="arrivato-text">
+        <h3 class="arrivato-card-title">Nel funnel</h3>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="gray-section">
+  <div>
+    <h2>Perché ho creato questa guida ?</h2>
+    <p>Se stai facendo tutto “bene” MA... </p>
+    <p>...le richieste non arrivano...stai perdendo soldi. <strong>OGNI GIORNO.</strong></p>
+      <p>Voglio aiutarti a capire dove, come e perché.</p>
+</div>
+</section>
+
+
+<div class="linea">
+  <h2>Cosa trovi nella guida</h2>
+
+  <div class="linea-item">
+    <img src="images2/lente.svg" alt="Icona">
+    <p><strong>I 3 errori invisibili</strong> che stanno frenando il tuo marketing</p>
+  </div>
+
+  <div class="linea-item">
+    <img src="images2/es.svg" alt="Icona">
+    <p><strong>Esempi concreti</strong> anche se tu non sei un tecnico</p>
+  </div>
+
+  <div class="linea-item">
+    <img src="images2/key.svg" alt="Icona">
+    <p><strong>Consigli rapidi</strong> per correggere i punti critici più comuni</p>
+  </div>
+</div>
+
+
+
+    <section class="gray-section">
+      <div>
+    <h2>Chi non dovrebbe scaricarla</h2>
+    <p>📌 È pensata per chi ha già un’attività attiva, non per chi parte da zero. </p>
+    <p>Non ti insegno a “fare marketing”. </p> 
+    <p>Ti mostro perché il tuo non sta funzionando (e cosa fare per sistemarlo).</p>
+</div>
+    </section>
+
+    
+<section class="gray2">
+  <div>
+    <h2>🎁 E c’è di più…</h2>
+    <p>Ho deciso di fare un regalo riservato ai primi 10 che scaricheranno questa guida.</p>
+    <p>Se sarai tra loro, lo troverai alla fine.</p>
+    <p>Ti assicuro che ti piacerà.</p>
+</div>
+</section>
+
+<section id="form">
+  <div class="cta-form">
+    <h2>Ricevi ora la tua guida gratuita</h2>
+
+    <form id="squeezeForm">
+      <input type="text" name="nome" placeholder="Mario Rossi">
+      <input type="email" name="email" placeholder="La tua email" required>
+      <br>
+      <input type="submit" value="Ricevi la guida gratuita">
+    </form>
+
+    <p style="font-size: 1.4rem; margin-top: 10px; color: #3C4A5F;">
+      *Bonus valido solo per i primi 10.
     </p>
-  </main>
+
+    <!-- Messaggio di ringraziamento (inizialmente nascosto) -->
+    <div id="thankYouMessage" style="display: none; font-size: 1.4rem; margin-top: 20px; color: green;">
+      ✅ Guida inviata! Controlla la tua email (anche nella spam).
+    </div>
+  </div>
+</section>
 
   <Footer slot="footer" />
 </BaseLayout>

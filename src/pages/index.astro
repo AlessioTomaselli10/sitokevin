@@ -1,29 +1,405 @@
 ---
+// src/pages/index.astro
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Seo from "../components/Seo.astro";
-import Footer from "../components/Footer.astro";
 import Header from "../components/header.astro";
+import Footer from "../components/Footer.astro";
+
+// Importa il CSS specifico per la homepage
+import "../styles/index.css";
 ---
 
 <BaseLayout>
   <Seo
-  slot="seo"
-  title="Home | sitokevin"
-  description="Scopri come creare un sistema efficace di acquisizione clienti nel 2025 con copywriting strategico."
-  canonical="https://fazzellikevin.it/"
-  author="Kevin Fazzelli"
-/>
+    slot="seo"
+    title="Kevin Fazzelli - Copywriter"
+    description="Scopri come creare un sistema efficace di acquisizione clienti nel 2025 con copywriting strategico."
+    canonical="https://fazzellikevin.it/"
+    author="Kevin Fazzelli"
+  />
   <Header slot="header" />
 
-  <main class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-display font-bold mb-6">
-      Benvenuto su sitokevin
-    </h1>
+  <!-- Contenuto specifico della homepage -->
+  <div class="titolo">
+    <h1 id="hero-title" class="fade-slide-up">Caro Imprenditore o Freelance, sei stanco di essere in balia delle <span class="oscillante">oscillazioni</span> del mercato?</h1>
+  </div>
+  <p class="fade fade-delay-1">I costi pubblicitari diventano sempre più insostenibili... e trovare clienti sembra diventato un terno al lotto.</p>
+  <p class="fade fade-delay-2">Ma forse c’è ancora <span class="lato">qualcosa</span> che puoi fare...</p>
+  <p class="fade fade-delay-3">In questa pagina, voglio svelarti cosa ti sta impedendo di <span class="bluetext">acquisire clienti</span> nel 2025 e come puoi fare per creare il tuo <span class="blu"> sistema di acquisizione</span>.</p>
+  <p class="fade fade-delay-4">Il mercato è in continua evoluzione, generare lead diventa sempre <span class="redtext">più difficile...</span></p>
+  <p class="fade fade-delay-5">Soprattutto, generare i lead <strong>giusti</strong>, che VOGLIONO <span class="space">comprare da te</span> e continuare a farlo.</p>
+  <div class="conteinerbullet">
+    <p class="title2">Questi sono i 2 fattori principali che probabilmente te lo stanno <span class="underlineR">impedendo</span></p>
+    <ul class="x">
+      <li class="bullet">La quantità di pubblicità online è aumentata <span class="corsivo">esponenzialmente.</span> Questo significa che hai bisogno di <span class="bluetext">differenziarti</span> dai tuoi concorrenti per <span class="underline">attirare l’attenzione</span> del tuo pubblico</li>
+      <li class="bullet">Non hai una strategia che <span class="corsivo">guidi</span> i tuoi potenziali clienti in un <span class="bluetext">processo guidato</span> per comprare da TE e rimanerti "fedele"</li>
+    </ul>
+  </div>
+  <p data-animate="fade-left" data-delay="1">Agire nel 2025 con queste <span class="white">mancanze</span> non ti fa avere nessun controllo sulla tua <span class="space">acquisizione clienti.</span></p>
+  <p data-animate="fade-left" data-delay="2">Ti fa <span class="italic">muovere</span> alla cieca e dalla tua parte hai soltanto la “speranza” che le persone ti notino.</p>
+  <p data-animate="fade-left" data-delay="3">Ma in questo caso, la speranza non basta, bisogna <i>prendere</i> il controllo. Non trovi?</p>
+  <div class="conteinerbullet">
+    <b><h2>Le 3 
+        <img srcset="/images/key.svg" width="30" height="31"/>
+      per creare un sistema di acquisizione clienti:
+    </h2></b>
+    <ul>
+      <li><b><span class="bluetext">Copywriting:</span></b> testi scritti per costruire materiali di marketing che ti permettono di <span class="corsivo">raggiungere</span> gli <strong>obiettivi</strong> di vendita prefissati della tua attività e <span class="corsivo">raggiungere</span> il tuo <strong>pubblico</strong></li>
+      <li><b><span class="bluetext">Strategia:</span></b> il copywriting <span class="redtext">senza strategia</span> è come una nave senza un timone, non hai una direzione precisa...
+        <br><br>Serve un <span class="lato">piano</span> ben preciso che guiderà i testi scritti, affinché si <span class="corsivo">mostrino</span> i materiali di marketing giusti alle <span class="space">persone giuste</span>
+      </li>
+      <li><b><span class="bluetext">Personalizzazione:</span></b> in base allo stile che <span class="corsivo">deciderai</span> di avere con <span class="underline">la tua comunicazione</span>, le persone ti riconosceranno e potrai coltivare relazioni con loro in modo che diventino <b>clienti abituali</b></li>
+    </ul>
+  </div>
+  <p class="text8" data-animate="fade-right" data-delay="1">Applicare questi elementi è cruciale per aumentare le tue vendite...</p>
+  <p class="text8" data-animate="fade-right" data-delay="2">Tuttavia, è un processo che richiede tanto tempo e può farti <span class="redtext">perdere</span> anche tanti soldi, specie se non sai bene COME applicarle</p>
+  <p class="txt9" data-animate="fade-right" data-delay="3">Ma c'è una <span class="lato">buona notizia...</span> posso farlo io per te!</p>
+  <div>
+    <b><h3>Lascia che mi presenti</h3></b>
+    <div class="image-container">
+      <picture>
+        <source srcset="/images/fotoNosf.avif" type="image/avif" width="300" height="300"/>
+        <img id="io" src="/images/fotoNosf.jpg" alt="foto profilo" data-animate="fade-zoom-in" data-delay="1" />
+      </picture>
+    </div>
+    <p data-animate="fade-down" data-delay="1">Mi chiamo Kevin e studio copywriting da quando ero un sedicenne.</p>
+    <p data-animate="fade-down" data-delay="2">Quando i miei occhi si <span class="corsivo">posarono</span> per la prima volta su un libro di marketing, sentii qualcosa che mi spinse a continuare a leggerlo. &#x1F4D6;</p>
+    <p data-animate="fade-down" data-delay="3">Forse gran parte dei meriti li devo alla mia efferata curiosità e innata passione per la psicologia. &#x1F9E0;</p>
+    <p data-animate="fade-down" data-delay="4">Ma da quel momento, la parola <span class="blu">marketing</span> cominciò a fare parte delle mie giornate e, soprattutto, anche delle mie nottate. &#x2728;</p>
+    <p data-animate="fade-down" data-delay="5">Mi sono cimentato nei migliori libri e corsi dei più grandi del settore per diventare un <b><span class="lato">copywriter a risposta diretta</span></b> e adesso il mio obiettivo è aiutare <strong>imprenditori</strong> e <strong>freelance</strong> che sono allineati al mio stesso mindset, ad acquisire clienti e <span class="space">aumentare</span> le loro <u>vendite</u></p>
+  </div>
+  <b><h3>Queste sono alcune persone che ho già aiutato</h3></b>
+  <div class="review-container"> 
+    <div class="arrow left" onclick="prevReview()">
+      <svg width="30" height="30" viewBox="0 0 24 24">
+        <path fill="#1e3a5f" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </div>
+    <div class="review-card">
+      <div class="review-image-wrapper">
+        <img src="/images/fotoale.avif" alt="Foto Recensore" class="review-image" width="90" height="90">
+      </div>
+      <h3 class="review-name">Alessio Tomaselli</h3>
+      <p class="review-profession">Web Designer</p>
+      <a href="https://mariosito.com" target="_blank" class="review-link" aria-label="Visita il sito personale del cliente">mariosito.com</a>
+      <p class="review-text">“Credo ci sia un enorme differenza sostanziale tra chi fa le cose e chi sa fare le cose. Kevin rientra SICURAMENTE nella 2ª categoria: mi sono trovato benissimo, come persona e ancora di più con i risultati ottenuti”</p>
+    </div>
+    <div class="arrow right" onclick="nextReview()">
+      <svg width="30" height="30" viewBox="0 0 24 24">
+        <path fill="#1e3a5f" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
+      </svg>
+    </div>
+  </div>      
+  <b><h3 data-animate="fade-up" data-delay="1">Cosa mi rende unico</h3></b>
+  <p data-animate="fade-left" data-delay="2">Potrei dire un'infinità di pregi (ma anche di difetti eh) che mi descrivano...</p>
+  <p data-animate="fade-left" data-delay="3">Ma c’è una singola qualità che, in particolare, <i>potrebbe</i> motivarti ad affidarmi il <b><span class="bluetext">marketing</span></b> della tua azienda.</p>
+  <p data-animate="fade-in-center" data-delay="4">Ed è questa:</p>
+  <p data-animate="fade-in-center" data-delay="5">Io faccio delle offerte che le persone non possono rifiutare</p>
+  <picture>
+    <source srcset="/images/Ilpadrino.avif" type="image/avif" />
+    <source srcset="/images/Ilpadrino.jpg" type="image/jpeg" />
+    <img id="padrino" src="/images/Ilpadrino.jpg" alt="Al copyno" data-animate="fade-zoom-in" data-delay="1" width="300" height="160"/>
+  </picture>
+  <p data-animate="fade-up" data-delay="2"> Voglio farne una a te adesso...</p>
+  <p data-animate="fade-up" data-delay="3">Ho gli <u>ultimi</u> 3 slot liberi e chi riuscirà a prenotarsi in tempo, riceverà un'<span class="lato">analisi strategica</span> totalmente gratuita!</p>
+  <h3 data-animate="fade-up" data-delay="4">Perché lo faccio?</h3>
+  <p data-animate="fade-up" data-delay="5">Perchè sono sicuro della <b>qualità</b> dei miei consigli e voglio che ne sia sicuro anche tu <i>applicando</i> e vedendo i risultati.</p>
+  <p data-animate="fade-up" data-delay="5">Questo è un ottimo modo per conoscerci, vedere se siamo <u>allineati</u> nel lavoro e se posso realmente aiutarti in base al tuo business.</p>
+  <b><h3 data-animate="fade-right" data-delay="3">Ecco alcuni<span class="highlight-circle">benefici
+    <svg viewBox="0 0 200 50" preserveAspectRatio="none">
+      <rect x="2" y="2" width="196" height="46" />
+    </svg>
+  </span>che otterrai sin dalla prima consulenza:</h3></b>
+  <div class="main-container">
+    <div class="bullett-container2" data-animate="fade-right" data-delay="1">
+      <img class="icon" src="/images/a.svg" alt="Linea2">
+      <span class="bullett-text"><span class="bluetext"><b>Analisi</b></span> del tuo mercato</span>
+    </div>
+    <div class="bullett-container2" data-animate="fade-right" data-delay="2">
+      <img class="icon" src="/images/c.svg" alt="Linea2">
+      <span class="bullett-text"><span class="bluetext"><b>Strategie</b></span> che puoi adottare sin da subito per <span class="bluetext">spiccare</span> dalla concorrenza</span>
+    </div>
+    <div class="bullett-container2" data-animate="fade-right" data-delay="3">
+      <img class="icon" src="/images/s.svg" alt="Linea2">
+      <span class="bullett-text">Una guida alla <span class="bluetext"><b>creazione</b></span> dei materiali di <span class="lato">marketing</span> che ti servono per <span class="space">acquisire</span> più clienti e fidelizzarli</span>
+    </div>
+    <p>Puoi contattarmi cliccando sul pulsante qui sotto!</p>
+    <button class="open-button swinging" onclick="document.getElementById('contactModal').checked = true;">
+      Voglio contattarti!
+    </button>
+  </div>
 
-    <p class="text-lg font-alt text-gray-900">
-      Questa è la tua nuova homepage in Astro + Tailwind.
-    </p>
-  </main>
+<section id="contact-section" class="contact-section" style="display: none;">
+  <div class="contact-container">
+    <h2>Contattami per una consulenza gratuita</h2>
+    
+    <form id="contactForm" class="contact-form">
+      <div class="form-grid">
+
+        <!-- Prima riga: Nome e Email -->
+        <div class="form-group">
+          <label for="name">Nome e Cognome *</label>
+          <input type="text" id="name" name="name" required placeholder="Mario Rossi">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="mariorossi@gmail.com">
+        </div>
+        
+        <!-- Seconda riga: Telefono e Sito -->
+        <div class="form-group">
+          <label for="number">Telefono</label>
+          <input type="tel" id="number" name="number" placeholder="+39 345 678 9012">
+        </div>
+        
+        <div class="form-group">
+          <label for="page">Sito Web o Social</label>
+          <input type="text" id="page" name="page" placeholder="Link al tuo sito/pagina">
+        </div>
+
+         <div class="form-group">
+          <label for="message">Raccontami del tuo progetto *</label>
+          <textarea id="message" name="message" 
+                   placeholder="Descrivi la tua attività, i tuoi obiettivi e le tue sfide principali..."
+                   required></textarea>
+        </div>
+        
+        <!-- Terza riga: Messaggio (occupa una colonna ma con la stessa larghezza degli input) -->
+      </div>
+            <button type="submit" class="submit-button large">📧 Contattami!</button>
+    </form>
+    
+    <div id="thanksMessage" class="thanks-message" style="display: none;">
+      <div class="success-icon">✅</div>
+      <h3>Grazie per la tua richiesta!</h3>
+      <p>Ti ricontatterò entro 24 ore. Controlla anche la cartella spam.</p>
+    </div>
+  </div>
+</section>
 
   <Footer slot="footer" />
+  <!-- Script specifici per la homepage -->
+  <script is:inline>
+// Gestione Form Inline e Recensioni
+document.addEventListener('DOMContentLoaded', function() {
+  // ===== GESTIONE FORM DI CONTATTO =====
+  const contactForm = document.getElementById('contactForm');
+  const thanksMessage = document.getElementById('thanksMessage');
+  const contactSection = document.getElementById('contact-section');
+  const openButton = document.querySelector('.open-button');
+  const cancelButton = document.querySelector('.cancel-button');
+
+  // Mostra il form quando si clicca sul CTA
+  if (openButton) {
+    openButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      showContactForm();
+    });
+  }
+
+  // Funzione per mostrare il form
+  window.showContactForm = function() {
+    if (contactSection) {
+      contactSection.style.display = 'block';
+      
+      // Scroll smooth alla sezione
+      setTimeout(() => {
+        contactSection.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center' 
+        });
+      }, 100);
+    }
+  };
+
+  // Funzione per nascondere il form
+  window.hideContactForm = function() {
+    if (contactSection) {
+      contactSection.style.display = 'none';
+      if (contactForm) {
+        contactForm.reset();
+        contactForm.style.display = 'block';
+      }
+      if (thanksMessage) {
+        thanksMessage.style.display = 'none';
+      }
+    }
+  };
+
+  // Gestione pulsante Annulla
+  if (cancelButton) {
+    cancelButton.addEventListener('click', hideContactForm);
+  }
+
+  // Gestione invio form
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = {
+        name: document.getElementById('name')?.value || '',
+        email: document.getElementById('email')?.value || '',
+        number: document.getElementById('number')?.value || '',
+        page: document.getElementById('page')?.value || '',
+        message: document.getElementById('message')?.value || ''
+      };
+
+      // Validazione base
+      if (!formData.name || !formData.email || !formData.message) {
+        alert('Per favore, compila tutti i campi obbligatori.');
+        return;
+      }
+
+      try {
+        // Disabilita il pulsante durante l'invio
+        const submitBtn = contactForm.querySelector('.submit-button');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Invio in corso...';
+        }
+
+        const response = await fetch('/contact.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+          // Successo - mostra messaggio
+          contactForm.style.display = 'none';
+          thanksMessage.style.display = 'block';
+          
+          // Reset dopo 5 secondi
+          setTimeout(() => {
+            thanksMessage.style.display = 'none';
+            contactForm.style.display = 'block';
+            contactForm.reset();
+            hideContactForm();
+          }, 5000);
+        } else {
+          throw new Error(`Errore server: ${response.status}`);
+        }
+      } catch (error) {
+        console.error('Errore invio form:', error);
+        alert('Si è verificato un errore durante l\'invio. Riprova più tardi.');
+      } finally {
+        // Riabilita il pulsante
+        const submitBtn = contactForm.querySelector('.submit-button');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = '📧 Invia Richiesta';
+        }
+      }
+    });
+  }
+
+  // ===== GESTIONE CAROSELLO RECENSIONI =====
+  const reviews = [
+    {
+      name: "Alessio Tomaselli",
+      image: "/images/fotoale.avif",
+      profession: "Web Designer",
+      link: "",
+      text: "Credo ci sia un enorme differenza sostanziale tra chi fa le cose e chi sa fare le cose. Kevin rientra SICURAMENTE nella 2ª categoria: mi sono trovato benissimo, come persona e ancora di più con i risultati ottenuti"
+    },
+    {
+      name: "Elisa Di Ganci",
+      image: "/images/fotoelisa.avif",
+      profession: "Imprenditrice Digitale",
+      link: "",
+      text: "Kevin è molto più che un professionista. Ha creato una strategia cucita su misura per il mio brand che mi ha permesso di acquisire più contatti, e attraverso la sua guida farli diventare miei clienti fedeli. Lo consiglio assolutamente!"
+    },
+    {
+      name: "Giusy Fazzelli",
+      image: "/images/fotogiusy.avif",
+      profession: "Event Manager",
+      link: "https://giusyballoonsfantasy.it/",
+      text: "Grazie a Kevin ho capito che non basta postare sui social: con lui a guidare il mio brand ho raddoppiato le richieste e attirato i clienti giusti. Kevin è stato decisivo per il mio business."
+    }
+  ];
+
+  let currentReviewIndex = 0;
+
+  // Funzione per visualizzare una recensione
+  function displayReview(index) {
+    const review = reviews[index];
+    const reviewElements = {
+      image: document.querySelector('.review-image'),
+      name: document.querySelector('.review-name'),
+      profession: document.querySelector('.review-profession'),
+      link: document.querySelector('.review-link'),
+      text: document.querySelector('.review-text')
+    };
+
+    if (reviewElements.image) reviewElements.image.src = review.image;
+    if (reviewElements.name) reviewElements.name.textContent = review.name;
+    if (reviewElements.profession) reviewElements.profession.textContent = review.profession;
+    if (reviewElements.link) {
+      reviewElements.link.href = review.link;
+      reviewElements.link.textContent = review.link ? new URL(review.link).hostname : '';
+    }
+    if (reviewElements.text) reviewElements.text.textContent = review.text;
+  }
+
+  // Funzioni per navigare le recensioni
+  window.prevReview = function() {
+    currentReviewIndex = (currentReviewIndex - 1 + reviews.length) % reviews.length;
+    displayReview(currentReviewIndex);
+  };
+
+  window.nextReview = function() {
+    currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
+    displayReview(currentReviewIndex);
+  };
+
+  // Inizializza la prima recensione
+  displayReview(currentReviewIndex);
+
+  // ===== GESTIONE ANIMAZIONI SCROLL =====
+  const animatedElements = document.querySelectorAll('[data-animate]');
+  
+  if (animatedElements.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { 
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    animatedElements.forEach(el => observer.observe(el));
+  }
+
+  // ===== GESTIONE RESPONSIVE =====
+  function handleResize() {
+    // Eventuali aggiustamenti responsive
+    if (window.innerWidth < 768) {
+      // Mobile adjustments
+    }
+  }
+
+  window.addEventListener('resize', handleResize);
+  handleResize();
+});
+
+// ===== GESTIONE OFFLINE (Fallback) =====
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('SW registrato:', registration);
+      })
+      .catch(error => {
+        console.log('Registrazione SW fallita:', error);
+      });
+  });
+}
+</script>
 </BaseLayout>

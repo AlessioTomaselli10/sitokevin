@@ -1,10 +1,8 @@
 ---
 const links = [
   { href: "/", label: "Home" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/chi-sono", label: "Chi sono" },
-  { href: "/contatti", label: "Contatti" },
-  { href: "/blog", label: "Blog" },
+  { href: "/consulenza", label: "Consulenza" },
+  // Aggiungi qui altre pagine quando saranno pronte
 ];
 ---
 
@@ -14,30 +12,23 @@ const links = [
     <img src="/images/logo.svg" alt="Logo Kevin Fazzelli" class="h-20 w-auto -ml-[1vw]" loading="eager" />
   </a>
 
-  <!-- Desktop nav -->
-  <nav class="hidden md:flex gap-6">
-    {links.map((l) => (
-      <a href={l.href} class="text-blue-900/85 hover:underline text-base">{l.label}</a>
-    ))}
-  </nav>
-
-  <!-- Hamburger -->
-  <button id="hamburger" class="flex flex-col gap-1.5 md:hidden" aria-label="Apri menu">
-    <span class="h-[3px] w-6 bg-blue-900/85"></span>
-    <span class="h-[3px] w-6 bg-blue-900/85"></span>
-    <span class="h-[3px] w-6 bg-blue-900/85"></span>
+  <!-- Hamburger - SEMPRE VISIBILE -->
+  <button id="hamburger" class="flex flex-col gap-1.5 group" aria-label="Apri menu">
+    <span class="h-[3px] w-6 bg-blue-900/85 group-hover:bg-blue-900 transition-colors"></span>
+    <span class="h-[3px] w-6 bg-blue-900/85 group-hover:bg-blue-900 transition-colors"></span>
+    <span class="h-[3px] w-6 bg-blue-900/85 group-hover:bg-blue-900 transition-colors"></span>
   </button>
 </header>
 
 <!-- Overlay -->
-<div id="overlay" class="fixed inset-0 bg-black/40 hidden z-[998]"></div>
+<div id="overlay" class="fixed inset-0 bg-black/40 hidden z-[998] transition-opacity duration-300"></div>
 
-<!-- Mobile menu -->
-<aside id="mobileMenu" class="fixed top-0 right-0 h-screen w-[250px] bg-blue-900 text-white p-6 hidden z-[999]">
-  <button id="closeMenu" class="ml-auto mb-6 text-3xl font-bold leading-none transition-transform" aria-label="Chiudi menu">&times;</button>
+<!-- Menu a tendina - SEMPRE LO STESSO -->
+<aside id="mobileMenu" class="fixed top-0 right-0 h-screen w-[250px] bg-blue-900 text-white p-6 hidden z-[999] translate-x-full transition-transform duration-300">
+  <button id="closeMenu" class="ml-auto mb-6 text-3xl font-bold leading-none transition-transform duration-300" aria-label="Chiudi menu">&times;</button>
   <nav class="flex flex-col gap-5">
     {links.map((l) => (
-      <a href={l.href} class="text-white text-lg">{l.label}</a>
+      <a href={l.href} class="text-white text-lg hover:text-blue-200 transition-colors duration-200">{l.label}</a>
     ))}
   </nav>
 </aside>
@@ -51,17 +42,39 @@ const links = [
   function openMenu() {
     mobileMenu.classList.remove('hidden');
     overlay.classList.remove('hidden');
-    // animazione piccola sull’icona close
-    closeBtn?.classList.remove('rotate');
-    requestAnimationFrame(() => closeBtn?.classList.add('rotate'));
+    // Forza il reflow per attivare la transizione
+    void mobileMenu.offsetWidth;
+    // Rimuovi translate-x-full per far scivolare il menu
+    mobileMenu.classList.remove('translate-x-full');
+    
+    closeBtn?.classList.remove('rotate-90');
+    requestAnimationFrame(() => closeBtn?.classList.add('rotate-90'));
   }
 
   function closeMenu() {
-    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.add('translate-x-full');
     overlay.classList.add('hidden');
+    closeBtn?.classList.remove('rotate-90');
+    
+    // Nascondi il menu dopo la transizione
+    setTimeout(() => {
+      mobileMenu.classList.add('hidden');
+    }, 300);
   }
 
   hamburger?.addEventListener('click', openMenu);
   overlay?.addEventListener('click', closeMenu);
   closeBtn?.addEventListener('click', closeMenu);
+
+  // Chiudi il menu quando si clicca su un link
+  document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Chiudi il menu con il tasto ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+      closeMenu();
+    }
+  });
 </script>
